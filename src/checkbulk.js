@@ -8,7 +8,7 @@ const checkNumbersBulk = require("./utils/checkNumbersBulk");
 		log(chalk.blue("Example: npm run checkbulk 919898989898 919898989898"));
 		process.exit(0);
 	}
-	const phoneNumbers = process.argv[2];
+	const phoneNumbers = process.argv.splice(0, 2);
 	log(chalk.blue(`Checking for existence numbers...`));
 	const numbersExists = await checkNumbersBulk(phoneNumbers);
 	log(chalk.green.bold(numbersExists));
